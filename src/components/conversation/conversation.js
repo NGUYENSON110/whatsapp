@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useRecipient } from '../hooks/useRecipient';
 
 
 const StyledContainer = styled.div`
@@ -15,11 +16,18 @@ const StyledContainer = styled.div`
 `
 
 const ConversationSelect = ({ id, conversationUsers }) => {
-    console.log('123', id)
-    console.log('456', conversationUsers)
+   
+
+    const { recipient, recipientEmail } = useRecipient(conversationUsers)
+
+    console.log("zzzzzzz", recipientEmail)
+
     return (
         <StyledContainer>
-             {id} - {JSON.stringify(conversationUsers)}   
+            <span>
+                {recipientEmail}
+            </span>
+            {/* {id} - {JSON.stringify(conversationUsers)} */}
         </StyledContainer>
     )
 }
