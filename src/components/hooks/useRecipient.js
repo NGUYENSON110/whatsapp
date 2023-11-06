@@ -19,7 +19,7 @@ export const useRecipient = (conversationUser) => {
     
     const recipient = recipientSnapshot?.docs[0]?.data() 
     // console.log("bbbb", queryGetRecipient)
-    // console.log("cccc", recipientSnapshot)
+    console.log("cccc", recipientSnapshot)
 
     return {
         recipient,
